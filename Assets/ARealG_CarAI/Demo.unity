@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 230066301}
   - component: {fileID: 230066302}
   m_Layer: 0
-  m_Name: Trail
+  m_Name: RightTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,7 +639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3268711642742529217, guid: 61cb3a18b452fd94ead697e0adcc00c7, type: 3}
       propertyPath: m_Name
-      value: AsphaltSmoke
+      value: LeftAsphaltSmoke
       objectReference: {fileID: 0}
     - target: {fileID: 3429763557741478663, guid: 61cb3a18b452fd94ead697e0adcc00c7, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -826,8 +826,8 @@ Transform:
   m_GameObject: {fileID: 362667470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.3, y: -0.61, z: 0.34}
-  m_LocalScale: {x: 16.4, y: 16.4, z: 16.4}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 23.6, y: 17.68, z: 23.6}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2132,7 +2132,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 76
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2157,8 +2157,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.03817585, y: -0.9615991, z: 0.18125656, w: -0.20252365}
-  m_LocalPosition: {x: -21.758846, y: 17.19214, z: 53.849903}
+  m_LocalRotation: {x: 0.31438187, y: -0.003130733, z: 0.00086033787, w: 0.94929105}
+  m_LocalPosition: {x: 4.9636197, y: 34.201515, z: -93.09315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2259,7 +2259,7 @@ GameObject:
   - component: {fileID: 1111152440}
   - component: {fileID: 1111152441}
   m_Layer: 0
-  m_Name: Trail
+  m_Name: LeftTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3214,7 +3214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3268711642742529217, guid: 61cb3a18b452fd94ead697e0adcc00c7, type: 3}
       propertyPath: m_Name
-      value: AsphaltSmoke
+      value: RightAsphaltSmoke
       objectReference: {fileID: 0}
     - target: {fileID: 3429763557741478663, guid: 61cb3a18b452fd94ead697e0adcc00c7, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -3596,17 +3596,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef29ddcb81de81041a171bdb849ebf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 180
-  accelerationFactor: 25
-  turnSpeed: 190
-  brakeForce: 1
-  driftFactor: 0.971
-  smoke1: {fileID: 404257842}
-  smoke2: {fileID: 1899938886}
-  leftSkid: {fileID: 1111152441}
-  rightSkid: {fileID: 230066302}
-  frontLeftWheel: {fileID: 9042096996939451054}
-  frontRightWheel: {fileID: 8856648786268659985}
+  _maxSpeed: 180
+  _acceleration: 25
+  _turnSpeed: 190
+  driftFactor: 0.984
+  _smoke1: {fileID: 404257842}
+  _smoke2: {fileID: 1899938886}
+  _leftSkid: {fileID: 1111152441}
+  _rightSkid: {fileID: 230066302}
+  _frontLeftWheel: {fileID: 9042096996939451054}
+  _frontRightWheel: {fileID: 8856648786268659985}
 --- !u!114 &1929201611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3619,7 +3618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d441ff2c1e67f194893638e1208d6856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointRange: 14
+  _rangeForNextPoint: 14
   carController: {fileID: 1929201610}
   currentPointList:
   - {fileID: 661888359}
@@ -3937,7 +3936,7 @@ GameObject:
   - component: {fileID: 1929201609}
   - component: {fileID: 919132147861715605}
   m_Layer: 0
-  m_Name: car
+  m_Name: Car_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class CarAI : MonoBehaviour
+public class CarAutoPilot : MonoBehaviour
 {
-    [SerializeField] private float pointRange = 20f;
-    [SerializeField] private CarController carController;
+    [SerializeField] private float _rangeForNextPoint = 14f;
+    [SerializeField] private CarMovement carController;
     [SerializeField] private List<Transform> currentPointList;
 
     private bool _isDriving = true;
-    private int currentPoint;
+    private int _currentPoint;
 
-    private float _gasPower=1;
+    private float _gasPower = 1;
     private float _brakeForce;
 
     private void FixedUpdate()
@@ -24,7 +24,7 @@ public class CarAI : MonoBehaviour
 
     private float CalculateSteeringAngle()
     {
-        Vector3 point = currentPointList[currentPoint].position;
+        Vector3 point = currentPointList[_currentPoint].position;
         Vector3 target = point - transform.position;
         target.Normalize();
 
@@ -47,7 +47,7 @@ public class CarAI : MonoBehaviour
 
     private void HandlePointControl()
     {
-        if (Vector3.Distance(transform.position, currentPointList[currentPoint].position) < pointRange)
+        if (Vector3.Distance(transform.position, currentPointList[_currentPoint].position) < _rangeForNextPoint)
         {
             MoveToNextPoint();
         }
@@ -55,13 +55,13 @@ public class CarAI : MonoBehaviour
 
     private void MoveToNextPoint()
     {
-        if (currentPoint == currentPointList.Count - 1)
+        if (_currentPoint == currentPointList.Count - 1)
         {
-            currentPoint = 0;
+            _currentPoint = 0;
         }
         else
         {
-            currentPoint++;
+            _currentPoint++;
         }
     }
 
